@@ -13,15 +13,14 @@ class SearchBar extends Component {
     super(props);
 
 
-    this.state = { term: 'xkevlar' };
+    this.state = { term: '' };
   }
 
   render() {
     return (
       <div>
       <input
-        // Controlled component; value only changes when state changes
-        value={this.state.term}
+        value={this.state.term} 
         onChange={event => this.setState({ term: event.target.value })}
         />
       </div>
