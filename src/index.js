@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 
@@ -12,12 +12,14 @@ YTSearch({key: API_KEY, term: 'Yeezy'}, function(data) {
 });
 
 // Define component blueprint
-const App = () => {
-  return (
-    <div>
-      <SearchBar />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <SearchBar />
+        </div>
+      );
+    }
 }
 
 // Use <App /> to instantiate component
