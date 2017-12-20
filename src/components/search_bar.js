@@ -8,10 +8,24 @@ import React, { Component } from 'react';
 // Class-based component instead of functional component
 // (i.e. not SearchBar = () => {})
 class SearchBar extends Component {
+  // Only class-based components have state (function-based ones don't)
+  constructor(props) {
+    super(props);
+
+
+    this.state = { term: 'xkevlar' };
+  }
+
   render() {
-    return <input
-      onChange={event => console.log(event.target.value)} // Always wrap JS vars in {}
-    />;
+    return (
+      <div>
+      <input
+        // Controlled component; value only changes when state changes
+        value={this.state.term}
+        onChange={event => this.setState({ term: event.target.value })}
+        />
+      </div>
+    )
   }
 }
 
