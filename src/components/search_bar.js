@@ -10,13 +10,8 @@ import React, { Component } from 'react';
 class SearchBar extends Component {
   render() {
     return <input
-      onChange={this.onInputChange} // Always wrap JS vars in {}
+      onChange={event => console.log(event.target.value)} // Always wrap JS vars in {}
     />;
-  }
-
-  // All event handlers (onInputChange) have an event object (event)
-  onInputChange(event) {
-    console.log(event.target.value);
   }
 }
 
