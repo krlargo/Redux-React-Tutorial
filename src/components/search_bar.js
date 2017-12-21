@@ -12,12 +12,12 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { term: 'xkevlar' };
+    this.state = { term: '' };
   }
 
   render() {
     return (
-      <div>
+      <div className="search-bar">
       <input
         // Controlled component; value only changes when state changes
         value={this.state.term}
