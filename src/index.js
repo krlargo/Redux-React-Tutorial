@@ -20,7 +20,7 @@ class App extends Component {
     // Load some video JSONs
     YTSearch({key: API_KEY, term: 'Kanye West'}, (videos) => {
       this.setState({
-        video: videos,
+        videos: videos,
         selectedVideo: videos[0]
       }); // same as videos: videos
     });
@@ -32,7 +32,9 @@ class App extends Component {
       <div>
         <SearchBar />
         <VideoDetail video={this.state.selectedVideo}/>
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          videos={this.state.videos} />
       </div>
     );
   }
